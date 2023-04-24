@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <div class="row">
+    <nav
+      class="p-2 navbar navbar-expand navbar-light bg-light justify-content-between"
+    >
+      <span class="navbar-brand">
+        <strong
+          ><a href="#" routerLink="" class="text-decoration-none text-black">{{
+            title
+          }}</a></strong
+        >
+      </span>
+      <span> Coding Factory</span>
+      <ul class="navbar-nav">
+        <app-dropdown
+          [dropdownLabel]="'Users'"
+          [items]="usersMenu"
+        ></app-dropdown>
+        <app-dropdown
+          [dropdownLabel]="'Products'"
+          [items]="productsMenu"
+        ></app-dropdown>
+      </ul>
+    </nav>
+  </div>
+  <div class="row mt-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>

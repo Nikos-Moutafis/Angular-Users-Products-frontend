@@ -1,0 +1,140 @@
+<h2>User Form</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-2">
+    <label for="username" class="form-label"
+      >Username (must be at least 3 characters)
+      <span class="text-danger">Required</span></label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      formControlName="username"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label"
+      >Password Must be at least 8 characters
+      <span class="text-danger">Required</span></label
+    >
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      formControlName="password"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label"
+      >Name <span class="text-danger">Required</span></label
+    >
+    <input type="text" class="form-control" id="name" formControlName="name" />
+  </div>
+  <div class="mb-3">
+    <label for="surname" class="form-label"
+      >Surname <span class="text-danger">Required</span></label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="surname"
+      formControlName="surname"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label"
+      >Email <span class="text-danger">Required</span></label
+    >
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      formControlName="email"
+    />
+  </div>
+
+  <div formGroupName="address">
+    <h4>Address</h4>
+    <div class="mb-3">
+      <label for="area" class="form-label"
+        >Area <span class="text-danger">Required</span></label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="area"
+        formControlName="area"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="road" class="form-label"
+        >Road <span class="text-danger">Required</span></label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="road"
+        formControlName="road"
+      />
+    </div>
+  </div>
+
+  <h4>Phone</h4>
+  <div formArrayName="phone">
+    <div *ngFor="let phone of phoneControls; let i = index" [formGroupName]="i">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="mb-3">
+            <label for="type" class="form-label">Type</label>
+            <input
+              type="text"
+              class="form-control"
+              id="type"
+              formControlName="type"
+            />
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="mb-3">
+            <label for="number" class="form-label"
+              >Number (must be at least 10 digits)</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="number"
+              formControlName="number"
+            />
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="mb-3">
+            <button
+              type="button"
+              class="btn btn-danger mt-4"
+              (click)="removePhone(i)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <button type="button" class="btn btn-primary" (click)="addPhone()">
+        Add Phone
+      </button>
+    </div>
+
+    <div
+      class="alert alert-danger mt-3"
+      role="alert"
+      *ngIf="!form.valid && isSubmitted"
+    >
+      Please correct the errors in the form and try again.
+    </div>
+
+    <button type="submit" class="btn btn-success mb-4">Submit</button>
+  </div>
+</form>

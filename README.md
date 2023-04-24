@@ -1,1 +1,1 @@
-# Angular-products-frontend
+Angular products front end
