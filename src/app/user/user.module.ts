@@ -9,6 +9,7 @@ import { UserService } from './user.service';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserInsertComponent } from './user-insert/user-insert.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
+import { ProductService } from '../products/product.service';
 
 const routes: Routes = [
   { path: 'list', component: UsersListComponent },

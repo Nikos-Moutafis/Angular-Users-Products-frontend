@@ -1,4 +1,11 @@
 <h2>User Form</h2>
+<div
+  class="alert alert-success mt-3"
+  role="alert"
+  *ngIf="form.valid && isSubmitted"
+>
+  User inserted
+</div>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="mb-2">
     <label for="username" class="form-label"

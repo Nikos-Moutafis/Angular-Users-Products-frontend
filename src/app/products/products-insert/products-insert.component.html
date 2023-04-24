@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">Add New Product</div>
+        <div
+          class="alert alert-success mt-3"
+          role="alert"
+          *ngIf="form.valid && isSubmitted"
+        >
+          Product inserted
+        </div>
+        <div class="card-body">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="product" class="form-label">
+                Product Name <span class="text-danger">Required</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="product"
+                formControlName="product"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="cost" class="form-label"
+                >Cost of product
+                <span class="text-danger">Required</span></label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="cost"
+                formControlName="cost"
+                min="0"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label"
+                >Description<span class="text-danger">Required</span></label
+              >
+              <textarea
+                class="form-control"
+                id="description"
+                formControlName="description"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="quantity" class="form-label"
+                >Quantity <span class="text-danger">Required</span></label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="quantity"
+                formControlName="quantity"
+                min="0"
+              />
+            </div>
+            <div
+              class="alert alert-danger mt-3"
+              role="alert"
+              *ngIf="!form.valid && isSubmitted"
+            >
+              Please correct the errors in the form and try again.
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary w-50 mx-auto">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

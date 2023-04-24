@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { User } from '../user.interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-insert',
@@ -12,7 +13,11 @@ export class UserInsertComponent {
   form: FormGroup;
   isSubmitted = false;
 
-  constructor(private fb: FormBuilder, private service: UserService) {
+  constructor(
+    private fb: FormBuilder,
+    private service: UserService,
+    private router: Router
+  ) {
     this.form = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -53,6 +58,9 @@ export class UserInsertComponent {
 
     if (this.form.valid) {
       console.log(this.form.value);
+      setTimeout(() => {
+        this.router.navigate(['user/list']);
+      }, 1500);
       const user = this.form.value as User;
       this.service.insertUser(user).subscribe((response) => {
         console.log(response);
