@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --output-path docs --base-href https://Nikos-Moutafis.github.io/Angular-products-frontend/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
