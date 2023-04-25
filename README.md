@@ -6,7 +6,7 @@
 
 - When user adds product/user  a HTTP request with method POST  is sent from the user/product service to the API. If it is success user sees a message and redirects to list page.
 
-### Try it yourserf  ➡️ [here](https://nikos-moutafis.github.io/Angular-products-frontend/)
+### Try it yourserf  ➡️ [here!!!](https://nikos-moutafis.github.io/Angular-products-frontend/)
 
 
 ## Installation
