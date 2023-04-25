@@ -12,4 +12,8 @@ export class UserService {
   findAll() {
     return this.http.get<UserAPIList>(`${USER_API}/findall`).pipe(delay(10));
   }
+
+  insertUser(user: User) {
+    return this.http.post<UserAPIList>(`${USER_API}/create`, user);
+  }
 }

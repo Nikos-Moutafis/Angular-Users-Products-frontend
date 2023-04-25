@@ -7,8 +7,8 @@ export const usersMenu: MenuItem[] = [
   { text: 'Update a User', link: 'not implemented' },
 ];
 export const productsMenu: MenuItem[] = [
-  { text: 'List all Products', link: 'not implemented' },
-  { text: 'Insert a Product', link: 'not implemented' },
+  { text: 'List all Products', link: 'products/list' },
+  { text: 'Insert a Product', link: 'products/insert' },
   { text: 'Update a Product', link: 'not implemented' },
   { text: 'Delete a Product', link: 'not implemented' },
 ];
