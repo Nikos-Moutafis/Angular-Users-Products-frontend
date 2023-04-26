@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../product.service';
 import { Product } from '../products.interface';
 import { Router } from '@angular/router';
-import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-products-insert',

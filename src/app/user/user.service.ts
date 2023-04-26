@@ -10,7 +10,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   findAll() {
-    return this.http.get<UserAPIList>(`${USER_API}/findall`).pipe(delay(10));
+    return this.http.get<UserAPIList>(`${USER_API}/findall`).pipe(delay(1000));
   }
 
   insertUser(user: User) {

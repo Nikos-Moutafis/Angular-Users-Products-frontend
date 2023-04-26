@@ -37,6 +37,22 @@
     </nav>
   </div>
   <div class="row mt-3">
+    <lib-alert
+      *ngIf="isLoading$ | async"
+      [type]="'info'"
+      [text]="'Communicating with backend...'"
+      [spinner]="true"
+    ></lib-alert>
+
+    <lib-alert
+      *ngFor="let alert of alerts; index as i"
+      [type]="alert.type"
+      [heading]="alert.heading"
+      [text]="alert.text"
+      (dismiss)="onAlertDismiss(i)"
+    >
+    </lib-alert>
+
     <router-outlet></router-outlet>
   </div>
 </div>
