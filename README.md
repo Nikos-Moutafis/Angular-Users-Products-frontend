@@ -1,5 +1,6 @@
 # Angular products front end
 ## This app was implemented to provide front end support to [this API](https://codingfactory.ddns.net/api-docs/).
+## The code for this API is [here](https://github.com/Nikos-Moutafis/Node.js-Users-Products-API)
 -   When user entes the app, he sees a welcome component.  At the right corner there is a dropdown menu. From that menu user can get all products or users and add a product or a user. 
 
 - When user clicks to get all products/users a HTTP  request with method GET is sent from the user/product service to the API. Then we pass the data into a list and populate a table with it.
